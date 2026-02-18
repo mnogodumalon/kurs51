@@ -1,0 +1,300 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.75rem;
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+
+  /* Teal-based palette with warm cream background */
+  --background: hsl(40 30% 98%);
+  --foreground: hsl(200 25% 15%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(200 25% 15%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(200 25% 15%);
+
+  /* Primary: Deep teal */
+  --primary: hsl(174 60% 35%);
+  --primary-foreground: hsl(0 0% 100%);
+  --primary-light: hsl(174 55% 45%);
+  --primary-glow: hsl(174 60% 60%);
+
+  /* Secondary: Soft gray-blue */
+  --secondary: hsl(200 15% 94%);
+  --secondary-foreground: hsl(200 25% 25%);
+
+  /* Muted: Warm gray */
+  --muted: hsl(40 10% 95%);
+  --muted-foreground: hsl(200 10% 45%);
+
+  /* Accent: Warm amber */
+  --accent: hsl(38 90% 55%);
+  --accent-foreground: hsl(30 60% 15%);
+
+  /* Success: Green */
+  --success: hsl(152 55% 40%);
+  --success-foreground: hsl(0 0% 100%);
+
+  --destructive: hsl(0 72% 55%);
+  --border: hsl(200 15% 90%);
+  --input: hsl(200 15% 90%);
+  --ring: hsl(174 60% 35%);
+
+  /* Chart colors */
+  --chart-1: hsl(174 60% 40%);
+  --chart-2: hsl(38 90% 55%);
+  --chart-3: hsl(200 50% 50%);
+  --chart-4: hsl(152 55% 45%);
+  --chart-5: hsl(280 50% 55%);
+
+  /* Sidebar */
+  --sidebar: hsl(200 25% 18%);
+  --sidebar-foreground: hsl(40 20% 95%);
+  --sidebar-primary: hsl(174 60% 50%);
+  --sidebar-primary-foreground: hsl(200 25% 12%);
+  --sidebar-accent: hsl(200 25% 25%);
+  --sidebar-accent-foreground: hsl(40 20% 95%);
+  --sidebar-border: hsl(200 20% 25%);
+  --sidebar-ring: hsl(174 60% 50%);
+
+  /* Custom design tokens */
+  --gradient-primary: linear-gradient(135deg, hsl(174 60% 35%), hsl(174 55% 45%));
+  --gradient-accent: linear-gradient(135deg, hsl(38 90% 55%), hsl(45 95% 60%));
+  --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(40 20% 98%));
+  --shadow-sm: 0 1px 2px hsl(200 25% 15% / 0.05);
+  --shadow-md: 0 4px 12px hsl(200 25% 15% / 0.08);
+  --shadow-lg: 0 10px 30px hsl(200 25% 15% / 0.12);
+  --shadow-primary: 0 4px 20px hsl(174 60% 35% / 0.25);
+  --transition-fast: all 0.15s ease;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark {
+  --background: hsl(200 25% 10%);
+  --foreground: hsl(40 20% 95%);
+  --card: hsl(200 25% 14%);
+  --card-foreground: hsl(40 20% 95%);
+  --popover: hsl(200 25% 14%);
+  --popover-foreground: hsl(40 20% 95%);
+  --primary: hsl(174 55% 50%);
+  --primary-foreground: hsl(200 25% 10%);
+  --secondary: hsl(200 20% 20%);
+  --secondary-foreground: hsl(40 20% 90%);
+  --muted: hsl(200 20% 18%);
+  --muted-foreground: hsl(200 10% 55%);
+  --accent: hsl(38 90% 55%);
+  --accent-foreground: hsl(200 25% 10%);
+  --destructive: hsl(0 65% 55%);
+  --border: hsl(200 20% 20%);
+  --input: hsl(200 20% 22%);
+  --ring: hsl(174 55% 50%);
+  --chart-1: hsl(174 55% 50%);
+  --chart-2: hsl(38 90% 60%);
+  --chart-3: hsl(200 50% 55%);
+  --chart-4: hsl(152 50% 50%);
+  --chart-5: hsl(280 45% 60%);
+  --sidebar: hsl(200 25% 8%);
+  --sidebar-foreground: hsl(40 20% 95%);
+  --sidebar-primary: hsl(174 55% 50%);
+  --sidebar-primary-foreground: hsl(200 25% 10%);
+  --sidebar-accent: hsl(200 25% 18%);
+  --sidebar-accent-foreground: hsl(40 20% 95%);
+  --sidebar-border: hsl(200 20% 18%);
+  --sidebar-ring: hsl(174 55% 50%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+}
+
+/* Typography utilities */
+.heading-xl {
+  @apply text-3xl font-bold tracking-tight;
+  letter-spacing: -0.02em;
+}
+
+.heading-lg {
+  @apply text-2xl font-bold tracking-tight;
+  letter-spacing: -0.015em;
+}
+
+.heading-md {
+  @apply text-lg font-semibold;
+}
+
+.text-label {
+  @apply text-xs font-medium uppercase tracking-wider text-muted-foreground;
+}
+
+.text-value {
+  @apply text-2xl font-bold;
+}
+
+/* Card styles */
+.card-elevated {
+  @apply bg-card rounded-xl border;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+}
+
+.card-elevated:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.card-hero {
+  background: var(--gradient-primary);
+  @apply rounded-2xl text-primary-foreground;
+  box-shadow: var(--shadow-primary);
+}
+
+/* Button enhancements */
+.btn-primary-gradient {
+  background: var(--gradient-primary);
+  @apply text-primary-foreground font-medium;
+  box-shadow: var(--shadow-primary);
+  transition: var(--transition-smooth);
+}
+
+.btn-primary-gradient:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* Table enhancements */
+.table-modern thead {
+  @apply bg-muted/50;
+}
+
+.table-modern th {
+  @apply text-xs font-semibold uppercase tracking-wider text-muted-foreground;
+}
+
+.table-modern tbody tr {
+  transition: var(--transition-fast);
+}
+
+.table-modern tbody tr:hover {
+  @apply bg-primary/5;
+}
+
+/* Badge variants */
+.badge-success {
+  @apply bg-success/10 text-success border-success/20;
+}
+
+.badge-warning {
+  @apply bg-accent/10 text-accent-foreground border-accent/30;
+}
+
+.badge-muted {
+  @apply bg-muted text-muted-foreground;
+}
+
+/* Sidebar nav styling */
+.nav-item {
+  @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-sidebar-foreground/70 transition-all;
+}
+
+.nav-item:hover {
+  @apply bg-sidebar-accent text-sidebar-foreground;
+}
+
+.nav-item.active {
+  @apply bg-sidebar-primary text-sidebar-primary-foreground font-medium;
+}
+
+/* Dialog styling */
+.dialog-overlay {
+  backdrop-filter: blur(4px);
+}
+
+/* Input focus */
+.input-focus {
+  @apply transition-all;
+}
+
+.input-focus:focus {
+  @apply ring-2 ring-primary/20 border-primary;
+}
+
+/* Stats card */
+.stat-card {
+  @apply bg-card rounded-xl border p-5;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-icon {
+  @apply w-10 h-10 rounded-lg flex items-center justify-center text-primary-foreground;
+  background: var(--gradient-primary);
+}
+
+/* Tab styling */
+.tab-modern {
+  @apply relative px-4 py-2 text-sm font-medium text-muted-foreground transition-colors;
+}
+
+.tab-modern:hover {
+  @apply text-foreground;
+}
+
+.tab-modern[data-state="active"] {
+  @apply text-primary;
+}
+
+.tab-modern[data-state="active"]::after {
+  content: '';
+  @apply absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full;
+}
